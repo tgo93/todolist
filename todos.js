@@ -16,7 +16,7 @@ while (command !== "quit" && command !== 'q') {
         let toDont = parseInt(prompt('Enter index of item to delete:'));
 
         // Ensures requested deletion exists
-        while (toDont >= toDoList.length || !toDont) {
+        while (!toDont && toDont !== 0 || toDont >= toDoList.length ) {
             toDont = parseInt(prompt('Enter index of item to delete:'))
         }
 
