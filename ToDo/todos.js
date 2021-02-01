@@ -25,7 +25,7 @@ while (true) {
         }
 
         // Only logs if successful
-        if (toDont) {
+        if (toDont || toDont === 0) {
             console.log(`${toDoList[toDont]} removed from list.`);
             toDoList.splice(toDont, 1);
         }
