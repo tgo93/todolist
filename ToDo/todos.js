@@ -18,7 +18,16 @@ while (true) {
         console.log('**********');
     } else if (command === 'delete') {
         let toDont = parseInt(prompt('Enter index of item to delete:'));
-        console.log(`${toDoList[toDont]} removed from list.`);
-        toDoList.splice(toDont, 1);
+
+        // Ensures requested deletion exists
+        while (toDont >= toDoList.length || toDont === undefined) {
+            toDont = parseInt(prompt('Enter index of item to delete:'))
+        }
+
+        // Only logs if successful
+        if (toDont) {
+            console.log(`${toDoList[toDont]} removed from list.`);
+            toDoList.splice(toDont, 1);
+        }
     }
 }
